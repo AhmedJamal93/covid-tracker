@@ -2,6 +2,11 @@ body {
     background-color: rgb(250, 250,250);
   }
   
+.cards {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
 .container {
     display: flex;
     align-items: center;
