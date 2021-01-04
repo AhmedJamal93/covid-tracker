@@ -3,7 +3,7 @@ import { React, Component} from 'react'
 import { Cards, Chart, Country, ChartCountry } from './components';
 import { fetchData } from './api/';
 import styles from './App.module.css';
-import { Grid, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import image from './images/covid-19.png';
 
 
@@ -19,13 +19,18 @@ class App extends Component{
     this.setState({
       data
     })
+    console.log(this.state.data)
   }
 
   handleCountryChange = async (country) => {
     const dataCountry = await fetchData(country);
 
-    this.setState({ dataCountry, country: country });
-    console.log(country)
+    this.setState({ 
+      dataCountry, 
+      country: country }, () => {
+
+      });
+    console.log(this.state.dataCountry)
   }
 
 
@@ -33,7 +38,8 @@ class App extends Component{
     const {data} = this.state
     return(
       <div className={styles.container}>
-      <img className={styles.image} src={image} />
+        <span className={styles.update}>Last Updated: {new Date(data.lastUpdate).toDateString()}</span>
+        <img className={styles.image} src={image} alt="Covid19" />
         <Grid 
           container
           direction="column"

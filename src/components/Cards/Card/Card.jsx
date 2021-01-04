@@ -14,9 +14,6 @@ const CardComponent = ({className, cardTitle, value, lastUpdate, cardSubtitle })
             <Typography variant='h5' compnent='h2'>
                 <CountUp start={0} end={value} duration={2.75} separator=" " />
             </Typography>
-            <Typography color='textSecondary'>
-                {new Date(lastUpdate).toDateString()}
-            </Typography>
             <Typography variant='body2' component='p'>
                 {cardSubtitle}
             </Typography>
