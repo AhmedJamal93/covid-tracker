@@ -43,6 +43,7 @@ import styles from './Country.module.css';
 
 const Countries = ({ handleCountryChange, countries }) => {
 
+    console.log(countries)
 
   return (
     <FormControl className={styles.formControl}>
