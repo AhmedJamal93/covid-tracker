@@ -6,3 +6,14 @@ global numbers and how the global numbers have changed over time since the pande
 
 # Screenshots
 ![](/src/images/one.png)
+![](/src/images/two.png)
+
+# How to Start App
+1. Clone repository
+2. Open folder and run the following commands in your CLI
+- npm install
+- npm start
+
+# Technologies Used
+- React.js
+- Material UI
