@@ -1,7 +1,7 @@
 import { React, Component} from 'react'
 
 import { Cards, Chart, Country, ChartCountry } from './components';
-import { fetchData } from './api/';
+import { fetchCountries, fetchData } from './api/';
 import styles from './App.module.css';
 import { Grid } from '@material-ui/core';
 import image from './images/covid-19.png';
@@ -11,14 +11,19 @@ class App extends Component{
   state = {
     data:{},
     dataCountry:{},
-    country:''
+    country:'',
+    countries:[]
   }
 
   async componentDidMount(){
     const data = await fetchData();
+    const countries = await fetchCountries();
     this.setState({
-      data
+      data,
+      countries
     })
+
+    console.log(this.state.countries)
     console.log(this.state.data)
   }
 
@@ -74,7 +79,7 @@ class App extends Component{
             container
             justify="center"
           >
-            <Country handleCountryChange={this.handleCountryChange} />
+            <Country countries={this.state.countries} handleCountryChange={this.handleCountryChange} />
             <ChartCountry data={this.state.dataCountry} country={this.state.country} />
           </Grid>
         </Grid> 
