@@ -5,4 +5,4 @@ the most impactful event to happen in 2020 was the Coronavirus being spread arou
 global numbers and how the global numbers have changed over time since the pandemic began. You also have the choice to choose and country and see their total numbers and how they have dealt with the Coronavirus.
 
 # Screenshots
-[!(/src/images/one.png)]
+![](/src/images/one.png)
