@@ -42,7 +42,9 @@ import { fetchCountries } from '../../api';
 import styles from './Country.module.css';
 
 const Countries = ({ handleCountryChange, countries }) => {
-
+  if (!countries){
+    return '...Loading'
+  }
     console.log(countries)
 
   return (
